@@ -1,20 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+        <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %} " type="image/png">
 
         <!--=============== REMIXICONS ===============-->
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
         <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %} ">
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 
         <title>MuslimMind</title>
     </head>
@@ -206,12 +207,12 @@
         </a>
 
         <!--=============== SCROLL REVEAL===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
         
         <!--=============== SWIPER JS ===============-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
 
         <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
     </body>
 </html>

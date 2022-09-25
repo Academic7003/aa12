@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'img/logod.png' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.4-web/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'family/NotoSans-Black.ttf' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %} " />
+    <title>Muslim Mind</title>
+  </head>
+  <body>
+    <div id="hamburgerjs" class="hamburgerjs">
+      <div class="js60">
+        <div class="div31">
+          <a class="div31a" href="">НАУЧНЫЕ  СТАТЬИ</a>
+          <a class="div31a" href="">ВХОД</a>
+        </div>
+        <div class="div32">
+          <a class="div31a" href="">НАУЧНЫЕ  ЖУРНАЛЫ</a>
+          <a class="div31a" href="">РЕГИСТРАЦИЯ</a>
+
+        </div>
+        <div class="div33">
+          <a class="div31a" href="">О НАС</a>
+
+        </div>
+        <div class="div35">
+          <button>ПОДДЕРЖАТЬ ПРОЕКТ</button>
+
+        </div>
+        <div class="div34">
+          <ul>
+            <li><a href=""><div class="iconsdiva i1"><i class="fab fa-telegram-plane"></i></div></a></li>
+            <li><a href=""><div class="iconsdiva i2"><i class="fab fa-vk"></i></div></a></li>
+            <li><a href=""><div class="iconsdiva i3"><i class="fab fa-facebook-f"></i></div></a></li>
+            <li><a href=""><div class="iconsdiva i4"><i class="fab fa-twitter"></i></div></a></li>
+            <li><a href=""><div class="iconsdiva i5"><i class="fab fa-odnoklassniki"></i></div></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="header60">
+        <div class="logo">
+          <div class="img">
+            <a href=""><img src="{% static 'img/logod.png' %}" alt="Logo" /></a>
+          </div>
+          <div class="write">
+            <p>
+              <a href="{% url 'posts:main' %} "
+                ><span class="span1">Muslim</span
+                ><span class="span2"> Mind</span></a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="pod">
+            <button>ПОДДЕРЖАТЬ ПРОЕКТ</button>
+          </div>
+          <div class="icons">
+            <div class="i"><i class="fas fa-search"></i></div>
+            <div id="ihamburger" class="i"><i class="fas fa-bars"></i></div>
+            <div id="itimes" class="i"><i class="fas fa-times"></i></div>
+            <div id="earth" class="i"><i class="fas fa-globe"></i></div>
+             <div id="langsjs" class="langs">
+              <div class="lang activeLang"><p>уз</p></div>
+              <div class="lang"><p>uz</p></div>
+              {% comment %} <div class="lang"><p>ru</p></div>
+              <div class="lang"><p>en</p></div> {% endcomment %}
+             </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>

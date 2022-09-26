@@ -31,13 +31,13 @@ INSTALLED_APPS = [
     'django_filters',
     'posts.apps.PostsConfig',
     'creators.apps.CreatorsConfig',
-    'whitenoise.runserver_nostatic',
+    # 'whitenoise.runserver_nostatic',
     'ckeditor',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

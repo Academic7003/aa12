@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: drf
     restart: always
-    command: sh -c "gunicorn --bind 0.0.0.0:8000 DRF.wsgi:application"
+    command: sh -c "gunicorn --bind 0.0.0.0:8000 muslimmind.wsgi:application"
     volumes:
       - .:/usr/src/app
       - ./media:/usr/src/app/media

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'creators.apps.CreatorsConfig',
     'whitenoise.runserver_nostatic',
     'ckeditor',
+    'gunicorn'
 ]
 
 MIDDLEWARE = [

@@ -31,13 +31,11 @@ INSTALLED_APPS = [
     'django_filters',
     'posts.apps.PostsConfig',
     'creators.apps.CreatorsConfig',
-    'whitenoise.runserver_nostatic',
     'ckeditor',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -47,7 +45,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'muslimmind.urls'
-WHITENOISE_USE_FINDERS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
@@ -68,13 +65,10 @@ TEMPLATES = [
         },
     },
 ]
-# DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 WSGI_APPLICATION = 'muslimmind.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {

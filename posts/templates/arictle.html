@@ -1,27 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+        <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %} " type="image/png">
 
         <!--=============== REMIXICONS ===============-->
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
         <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %} ">
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %} ">
 
         <title>MuslimMind</title>
     </head>
     <body>
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="index.html" class="nav__logo">Muslim Mind</a>
+                <a href="{% url 'posts:main' %} " class="nav__logo">Muslim Mind</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
@@ -59,7 +60,7 @@
 
         <main class="main">
             <section class="home" id="home">
-                <img src="assets/img/home1.jpg" alt="" class="home__img">
+                <img src="{% static 'assets/img/home1.jpg'%}" alt="" class="home__img">
                 <div class="home__container container grid">
                     <div class="home__data">
                         <span class="home__data-subtitle">Sayt bo'ladimi</span>
@@ -92,7 +93,7 @@
                         </div>
 
                         <div class="home__info-overlay">
-                            <img src="assets/img/home2.jpg" alt="" class="home__info-img">
+                            <img src="{% static 'assets/img/home2.jpg' %} " alt="" class="home__info-img">
                         </div>
                     </div>
                 </div>
@@ -100,22 +101,24 @@
             <!--==================== Maqola haqiuda ma'lumot ====================-->
             
             <div class="article container">
-                <img src="assets/img/discover2.jpg" alt="">
+                {% for post in posts %}
+                <img src="{{post.imageURL}}" alt="">
                 <div class="article--content">
-                    <h3>Qanaqa Maqolani mavzusi</h3>
-                    <p>Maqola haqida qolgan ma'lumot Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, molestiae dicta sunt a natus dignissimos eum suscipit aliquam magnam necessitatibus cupiditate quod maxime in asperiores, cumque repellendus harum tempore animi exercitationem odit unde esse, fugit illo commodi. Vel voluptatem aspernatur repellat, itaque quibusdam vero, architecto corporis nam magnam dolores rerum animi commodi id aperiam libero eligendi? Est maxime veniam doloribus. Illo commodi sint, voluptatibus ducimus sequi, voluptatem voluptates voluptas dolor laborum repellendus consectetur quas repellat molestias. Quasi suscipit porro placeat?</p>
+                    <h3>{{post.title|safe}}</h3>
+                    <p>{{post.body|safe}}</p>
                 </div>
                 <div class="read_and_down">
-                    <a href="assets/pdf/rutwig-atomy (1).pdf" class="place-button" download>
+                    <a href="{{post.file}}" class="place-button" download>
                        
                         <div class="button"> <i class='bx bx-down-arrow-alt'></i>Yuklash(.pdf)</div>
                     </a>
-                    <a href="assets/pdf/rutwig-atomy (1).pdf" class="place-button">
+                    <a href="{{post.file}}" class="place-button">
                        
                         <div class="button"> O'qish</div>
                     </a>
 
                 </div>
+                {% endfor %}
             </div>
             <!--==================== Maqolalar ====================-->
             
@@ -126,7 +129,7 @@
                 <div class="place__container container grid">
                     <!--==================== Maqola CARD 1 ====================-->
                     <div class="place__card">
-                        <img src="assets/img/place1.jpg" alt="" class="place__img">
+                        <img src="{% static 'assets/img/place1.jpg' %} " alt="" class="place__img">
                         
                         <div class="place__content">
                             
@@ -150,133 +153,7 @@
                         </button>
                     </div>
 
-                    <!--==================== Maqola CARD 2 ====================-->
-                    <div h class="place__card">
-                        <img src="assets/img/place2.jpg" alt="" class="place__img">
-                        
-                        <div class="place__content">
-                            <span class="place__data-back"></span>
 
-                            <div class="place__data">
-                                <h3 class="place__title">?!</h3>
-                                <span class="place__subtitle">++</span>
-                                <div class="place--watchDown">
-                                    <span class="place__price"><i class="ri-eye-line"></i>1599</span>
-                                    <span class="place__rating">
-                                        <i class="ri-download-line"></i>
-                                        <span class="place__rating-number">47</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="button button--flex place__button">
-                            <i class="ri-arrow-right-line"></i>
-                        </button>
-                    </div>
-
-                    <!--==================== Maqola CARD 3 ====================-->
-                    <div class="place__card">
-                        <img src="assets/img/place3.jpg" alt="" class="place__img">
-                        
-                        <div class="place__content">
-                            <span class="place__data-back"></span>
-
-
-                            <div class="place__data">
-                                <h3 class="place__title">AUuu</h3>
-                                <span class="place__subtitle">7 +7 nechi</span>
-                                <div class="place--watchDown">
-                                    <span class="place__price"><i class="ri-eye-line"></i>3499</span>
-                                    <span class="place__rating">
-                                        <i class="ri-download-line"></i>
-                                        <span class="place__rating-number">8</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="button button--flex place__button">
-                            <i class="ri-arrow-right-line"></i>
-                        </button>
-                    </div>
-
-                    <!--==================== Maqola CARD 4 ====================-->
-                    <div class="place__card">
-                        <img src="assets/img/place4.jpg" alt="" class="place__img">
-                        
-                        <div class="place__content">
-                            <span class="place__data-back"></span>
-
-
-                            <div class="place__data">
-                                <h3 class="place__title"> 49mi</h3>
-                                <span class="place__subtitle">e ha 14ku</span>
-                                <div class="place--watchDown">
-                                    <span class="place__price"><i class="ri-eye-line"></i>299</span>
-                                    <span class="place__rating">
-                                        <i class="ri-download-line"></i>
-                                        <span class="place__rating-number">4.8</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="button button--flex place__button">
-                            <i class="ri-arrow-right-line"></i>
-                        </button>
-                    </div>
-
-                    <!--==================== Maqola CARD 5 ====================-->
-                    <div class="place__card">
-                        <img src="assets/img/place5.jpg" alt="" class="place__img">
-                        
-                        <div class="place__content">
-                            
-                            <span class="place__data-back"></span>
-
-                            <div class="place__data">
-                                <h3 class="place__title">mayli</h3>
-                                <span class="place__subtitle">backend</span>
-                                <div class="place--watchDown">
-                                    <span class="place__price"><i class="ri-eye-line"></i>1999</span>
-                                    <span class="place__rating">
-                                        <i class="ri-download-line"></i>
-                                        <span class="place__rating-number">4</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="button button--flex place__button">
-                            <i class="ri-arrow-right-line"></i>
-                        </button>
-                    </div>
-                    <!--==================== Maqola CARD 6 ====================-->
-                    <div class="place__card">
-                        <img src="assets/img/place6.jpeg" alt="" class="place__img">
-                        
-                        <div class="place__content">
-                            <span class="place__data-back"></span>
-
-
-                            <div class="place__data">
-                                <h3 class="place__title">yaxshi qilingandur</h3>
-                                <span class="place__subtitle">Umid qilaman</span>
-                                <div class="place--watchDown">
-                                    <span class="place__price"><i class="ri-eye-line"></i>2499</span>
-                                    <span class="place__rating">
-                                        <i class="ri-download-line"></i>
-                                        <span class="place__rating-number">8</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="button button--flex place__button">
-                            <i class="ri-arrow-right-line"></i>
-                        </button>
-                    </div>
                     
                 </div>
                 <a href="products.html" class="place-button">
@@ -307,12 +184,12 @@
         </a>
 
         <!--=============== SCROLL REVEAL===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="{% static 'assets/js/scrollreveal.min.js' %} "></script>
         
         <!--=============== SWIPER JS ===============-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="{% static 'assets/js/swiper-bundle.min.js' %} "></script>
 
         <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
+        <script src="{% static 'assets/js/main.js' %} "></script>
     </body>
 </html>

@@ -7,7 +7,3 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'muslimmind.settings')
 
 application = get_wsgi_application()
-
-application = WhiteNoise(application, root="static_cdn")
-application.add_files("/static_cdn/")
-#  prefix="more-files/"

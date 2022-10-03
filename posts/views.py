@@ -67,8 +67,8 @@ def view_posts(request):
 def detail_post(request, pk):
     context = {}
     post = get_list_or_404(PostModel, pk=pk)
-    context['post'] = post
-    return render(request, 'detail.html', context)
+    context['posts'] = post
+    return render(request, 'arictle.html', context)
 
 
 def post_downloaded(request, pk):

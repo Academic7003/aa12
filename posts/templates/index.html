@@ -25,7 +25,7 @@
     <body>
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="#" class="nav__logo">Muslim Mind</a>
+                <a href="{% url 'posts:main' %} " class="nav__logo">Muslim Mind</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
@@ -67,7 +67,7 @@
         <main class="main">
             <!--==================== HOME ====================-->
             <section class="home" id="home">
-                <img src="assets/img/home1.jpg" alt="" class="home__img">
+                <img src="{% static 'assets/img/home1.jpg' %} " alt="" class="home__img">
                 <div class="home__container container grid">
                     <div class="home__data">
                         <span class="home__data-subtitle">Sayt bo'ladimi</span>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="home__info-overlay">
-                            <img src="assets/img/home2.jpg" alt="" class="home__info-img">
+                            <img src="{% static 'assets/img/home2.jpg' %} " alt="" class="home__info-img">
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                 <div class="place__container container grid">
                     <!--==================== Maqola CARD 1 ====================-->
                 {% for post in r_posts %}
-                    <div class="place__card">
+                    <div class="place__card"><a href= "{% url 'posts:detail' post.id %}">
                         <img src="{{post.imageURL}}" alt="" class="place__img">
                         
                         <div class="place__content">
@@ -136,7 +136,7 @@
                         <a href="arictle.html" class="button button--flex place__button">
                             <i class="ri-arrow-right-line"></i>
                         </a>
-                    </div>
+                    </a></div>
                     {% endfor %}
 
                     
@@ -183,7 +183,7 @@
 
                     <div class="about__img">
                         <div class="about__img-overlay">
-                            <img src="assets/img/about1.jpg" alt="" class="about__img-one">
+                            <img src="{% static 'assets/img/about1.jpg' %} " alt="" class="about__img-one">
                         </div>
                     </div>
                 </div>

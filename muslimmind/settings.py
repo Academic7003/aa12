@@ -16,8 +16,10 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+CSRF_TRUSTED_ORIGINS = ['http://104.248.200.12']
 
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+#
 # Application definition
 
 INSTALLED_APPS = [
@@ -32,6 +34,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'creators.apps.CreatorsConfig',
     'ckeditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

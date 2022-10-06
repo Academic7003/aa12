@@ -17,7 +17,7 @@
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="{% static 'assets/css/styles.css' %} ">
 
-        <title>MuslimMind</title>
+        <title>Muslim Mind</title>
     </head>
     <body>
         <header class="header" id="header">
@@ -27,10 +27,10 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">Asosiy menyu</a>
+                            <a href="#home" class="nav__link active-link">Асосий меню</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#place" class="nav__link">Maqolalar</a>
+                            <a href="#place" class="nav__link">Мақолалар</a>
                         </li>
                         
                     </ul>
@@ -39,7 +39,7 @@
                         <form action="" class="navbar--form">
                             <div class="inputBox">
                                 <input type="text" required='required'>
-                                <span>Qidiruv</span>
+                                <span>Қидирув</span>
                             </div>
                         </form>
                     </div>
@@ -64,7 +64,7 @@
                 <div class="home__container container grid">
                     <div class="home__data">
                         {% comment %} <span class="home__data-subtitle">Sayt bo'ladimi</span> {% endcomment %}
-                        <h1 class="home__data-title"><br>Aql <b>yuritadiganlar<br> uchun.</b></h1>
+                        <h1 class="home__data-title"><br><b>Ақл <br>юритадиганлар</b> учун.</h1>
                         {% comment %} <a href="#" class="button">Yoqdimi?</a> {% endcomment %}
 
                     </div>
@@ -115,11 +115,11 @@
 
                     <a href="{{post.file}}" class="place-button" download>
                        
-                        <div class="button"> <i class='bx bx-down-arrow-alt'></i>Yuklash(.pdf)</div>
+                        <div class="button"> <i class='bx bx-down-arrow-alt'></i>Қидирув</div>
                     </a>
                     <a href="http://muslimmind.uz/media/{{post.file}}" class="place-button">
                        
-                        <div class="button"> O'qish</div>
+                        <div class="button">Ўқиш</div>
                     </a>
                     {% endif %}
                 </div>
@@ -129,7 +129,7 @@
             
 
             <section class="place section" id="place">
-                <h2 class="section__title">O’xshash maqolalar</h2>
+                <h2 class="section__title">Бошқа мақолалар</h2>
 
                 <div class="place__container container grid">
                     <!--==================== Maqola CARD 1 ====================-->
@@ -162,7 +162,7 @@
                     
                 </div>
                 <a href="products.html" class="place-button">
-                    <div class="button">Hamma maqolalar</div>
+                    <div class="button">Ҳамма мақолалар</div>
                 </a>
             </section>
 

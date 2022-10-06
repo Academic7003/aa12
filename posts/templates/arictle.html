@@ -111,15 +111,17 @@
                     <p>{{post.body|safe}}</p>
                 </div>
                 <div class="read_and_down">
+                    {% if post.file %}
+
                     <a href="{{post.file}}" class="place-button" download>
                        
                         <div class="button"> <i class='bx bx-down-arrow-alt'></i>Yuklash(.pdf)</div>
                     </a>
-                    <a href="{{hpost.file}}" class="place-button">
+                    <a href="http://muslimmind.uz/media/{{post.file}}" class="place-button">
                        
                         <div class="button"> O'qish</div>
                     </a>
-
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

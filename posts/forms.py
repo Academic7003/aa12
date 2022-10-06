@@ -5,4 +5,4 @@ from posts.models import PostModel
 class SeesForm(forms.ModelForm):
     class Meta:
         model = PostModel
-        fields = ['sees']
+        fields = '__all__'

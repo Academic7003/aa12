@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
+from posts.forms import SeesForm
 from posts.models import *
 from django.http import HttpResponse
 from django.db.models import Q 
@@ -66,6 +67,7 @@ def view_posts(request):
 
 def detail_post(request, pk):
     context = {}
+    up_down(pk)
     post = get_list_or_404(PostModel, pk=pk)
     context['posts'] = post
     return render(request, 'arictle.html', context)
@@ -82,7 +84,8 @@ def post_seed(request, pk):
     context = {}
     file = PostModel.objects.get(pk=pk)
     file.sees += 1
-    file.save()
+    if file.is_valid():
+        file.save()
     return render(request, 'detail.html', context)
     
 def sort_by_creator(request, pk):
@@ -95,3 +98,7 @@ def sort_by_creator(request, pk):
     return render(request, 'creatordetail.html', context)
 
     
+def up_down(pk):
+    a = PostModel.objects.get(pk=pk)
+    a.sees= a.sees+1
+    a.save()

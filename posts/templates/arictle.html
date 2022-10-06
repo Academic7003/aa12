@@ -114,9 +114,11 @@
                     {% if post.file %}
 
                     <a href="{{post.file}}" class="place-button" download>
-                       
-                        <div class="button"> <i class='bx bx-down-arrow-alt'></i>Қидирув</div>
+                       {% comment %} <a href={% url 'post:download' post.id%}> {% endcomment %}
+                        <div class="button"> <i class='bx bx-down-arrow-alt'></i>Юклаш</div>
                     </a>
+                </a>
+
                     <a href="http://muslimmind.uz/media/{{post.file}}" class="place-button">
                        
                         <div class="button">Ўқиш</div>

@@ -26,8 +26,6 @@ services:
      context: .
      dockerfile: nginx/Dockerfile
    volumes:
-      - ./nginx/letsencrypt/fullchain.pem:/etc/letsencrypt/live/muslimmind.uz/fullchain.pem
-      - ./nginx/letsencrypt/privkey.pem:/etc/letsencrypt/live/muslimmind.uz/privkey.pem
       - ./media:/media
       - ./static:/static
       - ./media_cdn:/media_cdn

@@ -26,12 +26,16 @@ services:
      context: .
      dockerfile: nginx/Dockerfile
    volumes:
+      - ./nginx/letsencrypt/fullchain.pem:/etc/letsencrypt/live/muslimmind.uz/fullchain.pem
+      - ./nginx/letsencrypt/privkey.pem:/etc/letsencrypt/live/muslimmind.uz/privkey.pem
       - ./media:/media
       - ./static:/static
       - ./media_cdn:/media_cdn
       - ./static_cdn:/static_cdn
    ports:
      - "80:80" 
+     - "443:443" 
+
    depends_on:
      - drf
   db:

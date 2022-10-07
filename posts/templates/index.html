@@ -135,10 +135,10 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
 
-                        <a href="arictle.html" class="button button--flex place__button">
+                        <a href="{% url 'posts:detail' post.id %}" class="button button--flex place__button">
                             <i class="ri-arrow-right-line"></i>
-                        </a>
                     </a></div>
                     {% endfor %}
 

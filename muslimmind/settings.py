@@ -16,7 +16,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['http://104.248.200.12']
+CSRF_TRUSTED_ORIGINS = ['http://167.71.24.125']
 
 #STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 #
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'muslimmind.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'muslimmind',
+        'USER': 'nurmuhammad',
+        'PASSWORD': 'qalam2000',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 # Password validation

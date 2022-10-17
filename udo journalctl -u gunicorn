@@ -1,0 +1,12 @@
+[0;1;32m●[0m gunicorn.service
+     Loaded: loaded (/etc/systemd/system/gunicorn.service; disabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Mon 2022-10-17 15:02:39 UTC; 25s ago
+TriggeredBy: [0;1;32m●[0m gunicorn.socket
+   Main PID: 12178 (gunicorn)
+      Tasks: 4 (limit: 1131)
+     Memory: 105.2M
+     CGroup: /system.slice/gunicorn.service
+             ├─12178 /home/myprojectenv/bin/python /home/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock muslimmind.wsgi:application
+             ├─12190 /home/myprojectenv/bin/python /home/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock muslimmind.wsgi:application
+             ├─12191 /home/myprojectenv/bin/python /home/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock muslimmind.wsgi:application
+             └─12192 /home/myprojectenv/bin/python /home/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock muslimmind.wsgi:application

@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from posts.models import PostModel, Creator
-from posts.api.serializer import PostSerializer
+from posts.api.serializer import PostSerializer, CreatorSerializer
 from rest_framework import filters, viewsets
 import django_filters
 from rest_framework import status
@@ -58,20 +58,20 @@ def post_detail_api_view(request, pk):
 @api_view(['GET'])
 def sort_by_creators(request, pk):
     posts = PostModel.objects.filter(creators_id=pk)
-    serializer = PostSerializer(posts)
+    serializer = PostSerializer(posts, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 def creator_detail_api_view(request, pk):
     posts = get_object_or_404(Creator, pk = pk)
-    serializer = Creator(posts)
+    serializer = CreatorSerializer(posts)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def is_top_view(request):
     posts = PostModel.objects.filter(is_top=True)
-    serializer = PostSerializer(posts)
+    serializer = PostSerializer(posts, many=True)
     return Response(serializer.data)
 
 

@@ -138,5 +138,5 @@ dmypy.json
 .idea/modules.xml
 .idea/vagrant.xml
 .idea/vcs.xml
-db.sqlite3
-.env
+#db.sqlite3
+#.env
